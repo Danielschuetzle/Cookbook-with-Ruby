@@ -26,7 +26,7 @@ Make sure you have the following installed:
 
 ### Installing
 
-```bash
+`
 # Clone this repository locally
 git clone https://github.com/username/cookbook.git
 cd cookbook
@@ -40,10 +40,7 @@ rails db:create db:migrate
 
 # Start the server
 rails server
-
-
-
-
+`
 Once the server is running, you can visit http://localhost:3000 to view the app!
 
 Remember that this project follows the MVC pattern - Model (basic object manipulation), View (displaying information and asking for user information), and Controller (fetching and storing model data, instructing the view to interact with the user).
