@@ -26,7 +26,7 @@ Make sure you have the following installed:
 
 ### Installing
 
-```
+``
 # Clone this repository locally
 git clone https://github.com/username/cookbook.git
 cd cookbook
