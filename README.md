@@ -1,58 +1,42 @@
-## Background and Objectives
+# 🍳 Cookbook - Your Go-To Recipe Management App 🍳
 
-You are now going to code a Cookbook application that manages recipes.
+Welcome to Cookbook! 🚀 This project is a recipe management application, created using the robust Ruby on Rails framework. It has been designed to store, manage, and display your favorite recipes.
 
-The idea is quite simple: you love cooking, but you need to remember all the recipes you like. This is your cookbook! It'll keep a list of your recipes, allowing you to `list` them, `add` new recipes and `delete` others.
+Cookbook is your own digital recipe book. It aims to keep a list of your favorite recipes, letting you `list` them, `add` new ones, and `delete` ones you no longer need.
 
-You will build this app using the MVC **pattern**, also used in Rails:
-- Model: what is the basic object you want to manipulate?
-- View: this is the place where we **display information** to the user (`puts`) and **ask for information** from the user (`gets`)
-- Controller: it will fetch and store data of the Model, and tell the view to show or gather data to and from the user.
+## 🔑 Features
 
-Please start with a paper and pen to identify your components and their responsibilities.
+- **Recipe Management 📝:** Users can create, update, delete, and view their recipes with an easy-to-use interface.
+- **User Authentication 🔒:** Users can sign up, log in and log out with ease, ensuring a secure user experience.
+- **List Recipes 📃:** Users can list all their saved recipes, making it easy to choose what to cook next.
+- **Add Recipes 🍽️:** Users can add new recipes to their cookbook, ensuring their favorite meals are never forgotten.
+- **Delete Recipes 🗑️:** Users can remove recipes from their cookbook when they no longer need them.
 
-## Specs
+## 🚀 Getting Started
 
-### Model
+This section will guide you through the local setup.
 
-You should always start with your model. The most important thing in your app is your data, and using models allows you to manipulate whatever data you have. So, create a new file `recipe.rb` to define a `Recipe` class. It should have two instance variables, `@name` and `@description`.
+### Prerequisites
 
-### Repository
+Make sure you have the following installed:
 
-We now need a structure to store our user's recipes. We don't have a proper database yet, so we will use a class that acts like one (as we saw in the lecture). When a Ruby program exits, we lose all the data that we stored in variables. If we want to retrieve the data next time we run the program, we need to persist them, on the hard drive. We'll use a CSV file for that! The file is empty as this time of the challenge, you'll add your own recipes later through the app.
+- Ruby 2.7.0 or later
+- Rails 6.0.0 or later
+- PostgreSQL
 
-In the context of this challenge, the repository stores the recipes added by the user. In other words, it **is** the **cookbook**. Let's name the class `Cookbook` to write explicit and meaningful code, but keep in mind that it's the **repository** from the lecture's diagram!
-
-Implement the `Cookbook` class with 4 methods:
-- `initialize(csv_file_path)` which loads existing `Recipe` from the CSV
-- `all` which returns all the recipes
-- `add_recipe(recipe)` which adds a new recipe to the cookbook
-- `remove_recipe(recipe_index)` which removes a recipe from the cookbook.
-
-### Controller
-
-The controller will gather data from the cookbook to hand them over to the view. It will also ask the view for information to create new recipes. Here are the methods to implement:
-- `initialize(cookbook)` takes an instance of the `Cookbook` as an argument.
-- `list` all the recipes
-- `create` a new recipe
-- `destroy` an existing recipe
-
-### View
-
-The view is responsible for all the `puts` and `gets` of your MVC. Make sure you never have those words anywhere else! (except maybe for debugging)
-
-### Tying it all together
-
-When you are ready, you can test your program with:
+### Installing
 
 ```bash
-ruby lib/app.rb
-```
+# Clone this repository locally
+git clone https://github.com/username/cookbook.git
+cd cookbook
 
-We give you the `app.rb` that requires the code to instantiate a `Cookbook`, `Controller` and start the app. The infinite loop is given in the `Router` because this is not part of MVC. In fact, when you'll work with Rails, this will all be taken for granted and done for you. Which is nice 😉
+# Install dependencies
+bundle install
+yarn install
 
-## Extra Reading
+# Setup the database
+rails db:create db:migrate
 
-The following concepts are also important in Software Architecture:
-- [Single Responsibility Principle](http://en.wikipedia.org/wiki/Single_responsibility_principle)
-- [Separation of Concerns](http://en.wikipedia.org/wiki/Separation_of_concerns)
+# Start the server
+rails server
